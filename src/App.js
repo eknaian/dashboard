@@ -22,10 +22,11 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
+import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -62,7 +63,7 @@ const App = () => {
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element={<ECommerce />} />
+              <Route path="/" element={<Ecommerce />} />
               <Route path="/ecommerce" element={<Ecommerce />} />
               {/* Pages */}
               <Route path="/orders" element={<Orders />} />
